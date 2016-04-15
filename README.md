@@ -7,8 +7,10 @@ Very easy Ruby on Rails client!! for [Facebook Messenger Platform](https://devel
 Requires Rails >= 4.2.0
 
 ##Installation
-  
-    gem install 'facebook-bot'
+
+Bundler in your Gemfile.
+
+    gem 'facebook-bot'
 
 ##Quickstart
 
