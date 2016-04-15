@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["JunSangPil"]
   spec.email         = ["jun85664396@gmail.com"]
 
-  spec.summary       = %q{A Ruby on Rails Client for the Facebook Messenger Platform[bot]}
-  spec.description   = %q{A Ruby on Rails Client for the Facebook Messenger Platform[bot]}
+  spec.summary       = %q{Very easy Ruby on Rails Client for the Facebook Messenger Platform[bot]}
+  spec.description   = %q{Very easy Ruby on Rails Client for the Facebook Messenger Platform[bot]}
   spec.homepage      = "https://github.com/jun85664396/facebook-bot"
   spec.license       = "MIT"
 
