@@ -1,5 +1,5 @@
 #messenger-bot
-[![Build Status](https://travis-ci.org/jun85664396/messenger-bot.svg?branch=master)](https://travis-ci.org/jun85664396/messenger-bot)
+[![Build Status](https://travis-ci.org/jun85664396/messenger-bot-rails.svg?branch=master)](https://travis-ci.org/jun85664396/messenger-bot-rails)
 [![Gem Version](https://badge.fury.io/rb/messenger-bot.svg)](https://badge.fury.io/rb/messenger-bot)
 
 Ruby on Rails client!! for [Facebook Messenger Platform](https://developers.facebook.com/docs/messenger-platform)
