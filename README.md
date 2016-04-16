@@ -20,6 +20,12 @@ Bundler in your Gemfile.
       config.access_token = <ACCESS_TOKEN>
       config.validation_token = <VERIFY_TOKEN>
     end
+    
+    #config/routes.rb
+    
+    mount Facebook::Bot::Space => "/webhook"
+    
+    
 ##Example
 
 [Example](https://github.com/jun85664396/facebook-bot/blob/master/example/facebook_bot.rb)
