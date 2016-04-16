@@ -1,4 +1,4 @@
-module Facebook
+module Messenger
   module Bot
     module Config
       class << self

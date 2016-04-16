@@ -1,4 +1,4 @@
-module Facebook
+module Messenger
   module Bot
     class Transmitter
       def initialize(sender)
@@ -15,7 +15,7 @@ module Facebook
       private
 
       def send_message(data)
-        url = URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{Facebook::Bot::Config.access_token}")
+        url = URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}")
         http = Net::HTTP.new(url.host, 443)
         http.use_ssl = true
         begin

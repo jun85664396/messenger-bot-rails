@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'facebook/bot/version'
+require 'messenger/bot/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "facebook-bot"
-  spec.version       = Facebook::Bot::VERSION
+  spec.name          = "messenger-bot"
+  spec.version       = Messenger::Bot::VERSION
   spec.authors       = ["JunSangPil"]
   spec.email         = ["jun85664396@gmail.com"]
 
-  spec.summary       = %q{Very easy Ruby on Rails Client for the Facebook Messenger Platform[bot]}
-  spec.description   = %q{Very easy Ruby on Rails Client for the Facebook Messenger Platform[bot]}
-  spec.homepage      = "https://github.com/jun85664396/facebook-bot"
+  spec.summary       = %q{Ruby on Rails Client for the Facebook Messenger Platform  Formerly known as 'facebook-bot'.}
+  spec.description   = %q{Ruby on Rails Client for the Facebook Messenger Platform}
+  spec.homepage      = "https://github.com/jun85664396/messenger-bot-rails"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or

@@ -1,4 +1,4 @@
-module Facebook
+module Messenger
   module Bot
     class Receiver
       def self.share(data)
@@ -17,7 +17,7 @@ module Facebook
       def self.define_event(event, &block)
         self.class.instance_eval do
           define_method(event.to_sym) do |event|
-            yield(event, Facebook::Bot::Transmitter.new(event["sender"]["id"]))
+            yield(event, Messenger::Bot::Transmitter.new(event["sender"]["id"]))
           end
         end
       end
