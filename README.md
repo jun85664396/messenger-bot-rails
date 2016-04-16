@@ -28,11 +28,10 @@ Bundler in your Gemfile.
     
 ##Example
 
-[Example](https://github.com/jun85664396/facebook-bot/blob/master/example/facebook_bot.rb)
+[Example](https://github.com/jun85664396/facebook-bot/blob/master/example/facebook_bot.rb) [finding for a better way..]
 
-    #app/models/facebook_bot.rb
+    # app/controllers/application_controller.rb
     
-    class FacebookBot
       Facebook::Bot.on("message") do |event, sender|
         sender.reply({ text: "Reply: #{event['message']['text']}" })
       end
@@ -42,7 +41,7 @@ Bundler in your Gemfile.
       Facebook::Bot.on("postback") do |event, sender|
         #BlahBlah
       end
-    end
+    
 ![Ex](https://camo.githubusercontent.com/2452b2ca2f748f2695e545c5c14e70356df5d673/68747470733a2f2f692e696d6775722e636f6d2f59544d4f5967362e676966)
 
 ## license
