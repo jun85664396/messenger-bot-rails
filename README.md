@@ -1,6 +1,6 @@
-#facebook-bot
-[![Build Status](https://travis-ci.org/jun85664396/facebook-bot.svg?branch=master)](https://travis-ci.org/jun85664396/facebook-bot)
-[![Gem Version](https://badge.fury.io/rb/facebook-bot.svg)](https://badge.fury.io/rb/facebook-bot)
+#messenger-bot
+[![Build Status](https://travis-ci.org/jun85664396/messenger-bot.svg?branch=master)](https://travis-ci.org/jun85664396/messenger-bot)
+[![Gem Version](https://badge.fury.io/rb/messenger-bot.svg)](https://badge.fury.io/rb/messenger-bot)
 
 Ruby on Rails client!! for [Facebook Messenger Platform](https://developers.facebook.com/docs/messenger-platform)
 
@@ -14,7 +14,7 @@ Bundler in your Gemfile.
 
 ##Quickstart
 
-    #config/initializers/facebook_bot.rb
+    #config/initializers/messenger_bot.rb
     
     Messenger::Bot.config do |config|
       config.access_token = <ACCESS_TOKEN>
@@ -28,7 +28,7 @@ Bundler in your Gemfile.
     
 ##Example
 
-[Example](https://github.com/jun85664396/facebook-bot/blob/master/example/facebook_bot.rb)
+[Example](https://github.com/jun85664396/messenger-bot/blob/master/example/messenger_bot_controller.rb)
 
     # app/controllers/application_controller.rb
     
