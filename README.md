@@ -28,7 +28,7 @@ Bundler in your Gemfile.
     
 ##Example
 
-[Example](https://github.com/jun85664396/messenger-bot/blob/master/example/messenger_bot_controller.rb)
+[Example](https://github.com/jun85664396/messenger-bot-rails/blob/master/example/messenger_bot_controller.rb)
 
     # app/controllers/application_controller.rb
     
