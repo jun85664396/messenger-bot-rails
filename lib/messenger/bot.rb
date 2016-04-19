@@ -1,5 +1,6 @@
 require "messenger/bot/version"
 require "messenger/bot/config"
+require "messenger/bot/request"
 require "messenger/bot/transmitter"
 require "messenger/bot/receiver"
 

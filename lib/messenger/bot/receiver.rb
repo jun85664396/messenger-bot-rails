@@ -4,11 +4,11 @@ module Messenger
       def self.share(data)
         messaging_events = data["entry"].first["messaging"]
         messaging_events.each_with_index do |event, key|
-          if event["message"]
+          if event["message"] && !defined?(message).nil?
             self.class.send(:message, event)
-          elsif event["postback"]
+          elsif event["postback"] && !defined?(postback).nil?
             self.class.send(:postback, event)
-          elsif event["delivery"]
+          elsif event["delivery"] && !defined?(delivery).nil?
             self.class.send(:delivery, event)
           end 
         end 

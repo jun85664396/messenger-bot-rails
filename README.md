@@ -4,7 +4,7 @@
 
 Ruby on Rails client!! for [Facebook Messenger Platform](https://developers.facebook.com/docs/messenger-platform)
 
-Requires Rails >= 4.2.0
+Requires Rails >= 4
 
 ##Installation
 
@@ -30,18 +30,37 @@ Bundler in your Gemfile.
 
 [Example](https://github.com/jun85664396/messenger-bot-rails/blob/master/example/messenger_bot_controller.rb)
 
-    # app/controllers/application_controller.rb
+    # app/controllers/messenger_bot_controller.rb
     
-      Messenger::Bot.on("message") do |event, sender|
-        sender.reply({ text: "Reply: #{event['message']['text']}" })
+      class MessengerBotController < ActionController::Base
+        def message(event, sender)
+          # profile = sender.get_profile
+          sender.reply({ text: "Reply: #{event['message']['text']}" })
+        end
+      
+        def delivery(event, sender)
+          #BlahBlah
+        end
+      
+        def postback(event, sender)
+          #BlahBlah
+        end
       end
-      Messenger::Bot.on("delivery") do |event, sender|
-        #BlahBlah
-      end
-      Messenger::Bot.on("postback") do |event, sender|
-        #BlahBlah
-      end
-    
+
+##Usage
+
+###message(event, sender)
+* `event` - Hash containing the message event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#received_message)
+* `sender` - Class to call the 'reply, get_profile' method.
+
+###delivery(event, sender)
+* `event` - Hash containing the delivery event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#message_delivery)
+* `sender` - Class to call the 'reply, get_profile' method.
+
+###postback(event, sender)
+* `event` - Hash containing the postback event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#postback)
+* `sender` - Class to call the 'reply, get_profile' method.
+
 ![Ex](https://camo.githubusercontent.com/2452b2ca2f748f2695e545c5c14e70356df5d673/68747470733a2f2f692e696d6775722e636f6d2f59544d4f5967362e676966)
 
 ## license

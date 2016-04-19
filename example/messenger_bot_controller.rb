@@ -1,10 +1,14 @@
 class MessengerBotController < ActionController::Base
-  Messenger::Bot.on("message") do |event, sender|
+  def message(event, sender)
+    # profile = sender.get_profile
     sender.reply({ text: "Reply: #{event['message']['text']}" })
   end
-  Messenger::Bot.on("delivery") do |event, sender|
+
+  def delivery(event, sender)
+    #BlahBlah
   end
-  Messenger::Bot.on("postback") do |event, sender|
+
+  def postback(event, sender)
     #BlahBlah
   end
 end
