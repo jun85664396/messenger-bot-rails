@@ -10,42 +10,48 @@ Requires Rails >= 4
 
 Bundler in your Gemfile.
 
-    gem 'messenger-bot'
+```ruby
+gem 'messenger-bot'
+```
 
 ##Quickstart
 
-    #config/initializers/messenger_bot.rb
+```ruby
+#config/initializers/messenger_bot.rb
+
+Messenger::Bot.config do |config|
+  config.access_token = <ACCESS_TOKEN>
+  config.validation_token = <VERIFY_TOKEN>
+end
+
+#config/routes.rb
+
+mount Messenger::Bot::Space => "/webhook"
+```
     
-    Messenger::Bot.config do |config|
-      config.access_token = <ACCESS_TOKEN>
-      config.validation_token = <VERIFY_TOKEN>
-    end
-    
-    #config/routes.rb
-    
-    mount Messenger::Bot::Space => "/webhook"
-    
-    
+   
 ##Example
 
 [Example](https://github.com/jun85664396/messenger-bot-rails/blob/master/example/messenger_bot_controller.rb)
 
-    # app/controllers/messenger_bot_controller.rb
+```ruby
+# app/controllers/messenger_bot_controller.rb
+
+class MessengerBotController < ActionController::Base
+    def message(event, sender)
+      # profile = sender.get_profile
+      sender.reply({ text: "Reply: #{event['message']['text']}" })
+    end
     
-      class MessengerBotController < ActionController::Base
-        def message(event, sender)
-          # profile = sender.get_profile
-          sender.reply({ text: "Reply: #{event['message']['text']}" })
-        end
-      
-        def delivery(event, sender)
-          #BlahBlah
-        end
-      
-        def postback(event, sender)
-          #BlahBlah
-        end
-      end
+    def delivery(event, sender)
+      #BlahBlah
+    end
+    
+    def postback(event, sender)
+      #BlahBlah
+    end
+end
+```
 
 ##Usage
 
