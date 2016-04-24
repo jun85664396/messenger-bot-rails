@@ -4,6 +4,8 @@ module Messenger
       class << self
         attr_accessor :access_token
 
+        attr_accessor :secret_token
+
         attr_accessor :validation_token
       end
     end

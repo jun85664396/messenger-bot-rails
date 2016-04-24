@@ -1,6 +1,8 @@
 module Messenger
   module Bot
     class Space::StationController < ::MessengerBotController
+      before_action :authenticate, only: [:receive]
+
       def validation
         if params["hub.verify_token"] === Messenger::Bot::Config.validation_token
           return render json: params["hub.challenge"]
@@ -22,6 +24,12 @@ module Messenger
           end 
         end 
         render body: "ok"
+      end
+
+      def authenticate
+        return true if Messenger::Bot::Config.secret_token.nil?
+        signature = "sha1=" + OpenSSL::HMAC.hexdigest(OpenSSL::Digest.new('sha1'), Messenger::Bot::Config.secret_token, request.body.read)
+        return render(body: "Error, Signatures didn't match", status: 500) unless Rack::Utils.secure_compare(signature, request.env['HTTP_X_HUB_SIGNATURE'])
       end
     end
   end
