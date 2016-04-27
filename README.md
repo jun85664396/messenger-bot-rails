@@ -14,45 +14,52 @@ Bundler in your Gemfile.
 gem 'messenger-bot'
 ```
 
-##Quickstart
+##Getting Started
 
-```ruby
-#config/initializers/messenger_bot.rb
+####Before You Begin
+  Now sign in into the [Facebook developer](https://developers.facebook.com/apps) and create an application
 
-Messenger::Bot.config do |config|
-  config.access_token = <ACCESS_TOKEN>
-  config.validation_token = <VERIFY_TOKEN>
-  config.secret_token = <SECRET_TOKEN>
-end
+1. Add `messenger-bot-rails` to your Gemfile
+  ```ruby
+  gem 'messenger-bot'
+  ```
 
-#config/routes.rb
-
-mount Messenger::Bot::Space => "/webhook"
-```
-    
-   
-##Example
-
-[Example](https://github.com/jun85664396/messenger-bot-rails/blob/master/example/messenger_bot_controller.rb)
-
-```ruby
-# app/controllers/messenger_bot_controller.rb
-
-class MessengerBotController < ActionController::Base
-  def message(event, sender)
-    # profile = sender.get_profile
-    sender.reply({ text: "Reply: #{event['message']['text']}" })
+2. Set config in `config/initializers/messenger_bot.rb `
+  ```ruby
+  Messenger::Bot.config do |config|
+    config.access_token = <ACCESS_TOKEN>
+    config.validation_token = <VERIFY_TOKEN>
+    config.secret_token = <SECRET_TOKEN>
   end
+  ```
+  [Subscribe the App to the Page](https://developers.facebook.com/docs/messenger-platform/quickstart#subscribe_app_page)
   
-  def delivery(event, sender)
-    #BlahBlah
-  end
+3. Add the following to your `config/routes.rb`
+  ```ruby
+  mount Messenger::Bot::Space => "/webhook"
+  ```
+4. create a controller in `app/controllers/messenger_bot_controller.rb`
+  ```ruby
+  class MessengerBotController < ActionController::Base
+    def message(event, sender)
+      # profile = sender.get_profile
+      sender.reply({ text: "Reply: #{event['message']['text']}" })
+    end
   
-  def postback(event, sender)
-    #BlahBlah
+    def delivery(event, sender)
+    end
+  
+    def postback(event, sender)
+      payload = event["postback"]["payload"]
+      case payload
+      when :something
+        #ex) process sender.reply({text: "button click event!"})
+      end
+    end
   end
-end
-```
+  ```
+
+[wiki](https://github.com/jun85664396/messenger-bot-rails/wiki/Getting-Started)
 
 ##Usage
 
