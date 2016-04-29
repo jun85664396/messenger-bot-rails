@@ -15,8 +15,9 @@ module Messenger
         Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}", data)
       end
 
-      def get_profile
-        Messenger::Bot::Request.get("https://graph.facebook.com/v2.6/#{@sender_id}?fields=first_name,last_name,profile_pic&access_token=#{Messenger::Bot::Config.access_token}")
+      def get_profile(fields = nil)
+        fields ||= [:locale, :timezone, :gender, :first_name, :last_name, :profile_pic]
+        Messenger::Bot::Request.get("https://graph.facebook.com/v2.6/#{@sender_id}?fields=#{fields.join(",")}&access_token=#{Messenger::Bot::Config.access_token}")
       end
     end
   end
