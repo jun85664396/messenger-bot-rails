@@ -27,9 +27,9 @@ gem 'messenger-bot'
 2. Set config in `config/initializers/messenger_bot.rb `
   ```ruby
   Messenger::Bot.config do |config|
-    config.access_token = <ACCESS_TOKEN>
+    config.access_token = <PAGE_ACCESS_TOKEN>
     config.validation_token = <VERIFY_TOKEN>
-    config.secret_token = <SECRET_TOKEN>
+    config.secret_token = <FB_APP_SECRET_TOKEN>
   end
   ```
   [Subscribe the App to the Page](https://developers.facebook.com/docs/messenger-platform/quickstart#subscribe_app_page)
