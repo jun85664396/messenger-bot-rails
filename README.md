@@ -75,7 +75,10 @@ gem 'messenger-bot'
 * `event` - Hash containing the postback event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#postback)
 * `sender` - Class to call the 'reply, get_profile' method.
 
-![Ex](https://camo.githubusercontent.com/2452b2ca2f748f2695e545c5c14e70356df5d673/68747470733a2f2f692e696d6775722e636f6d2f59544d4f5967362e676966)
+###optin(event, sender)
+* `event` - Hash containing the optin event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#postback)
+* `sender` - Class to call the 'reply, get_profile' method.
+
 
 ## license
 
