@@ -25,5 +25,6 @@ module Messenger
     end
 
     autoload :Space, "messenger/bot/space"
+    autoload :Thread, "messenger/bot/thread"
   end
 end

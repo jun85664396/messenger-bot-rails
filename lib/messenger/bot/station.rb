@@ -22,6 +22,8 @@ module Messenger
               send(:postback, event, sender)
             elsif event["delivery"] && !defined?(delivery).nil?
               send(:delivery, event, sender)
+            elsif event["optin"]
+              send(:optin, event, sender)
             end 
           end 
         end
