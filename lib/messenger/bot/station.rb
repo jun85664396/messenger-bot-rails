@@ -19,7 +19,12 @@ module Messenger
             if event["message"] && !defined?(message).nil? && event["message"]["quick_reply"].nil?
               send(:message, event, sender)
             elsif (event["postback"] && !defined?(postback).nil?) || (event["message"]["quick_reply"].present?)
-              send(:postback, event, sender)
+              if event["message"]["quick_reply"].present?
+                 event["postback"] = event["message"]["quick_reply"]
+                 send(:postback, event, sender)
+              else
+                send(:postback, event, sender)
+              end
             elsif event["delivery"] && !defined?(delivery).nil?
               send(:delivery, event, sender)
             elsif event["optin"]
