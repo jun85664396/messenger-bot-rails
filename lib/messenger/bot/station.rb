@@ -16,7 +16,7 @@ module Messenger
           messaging_events = entry["messaging"]
           messaging_events.each_with_index do |event, key|
             sender = Messenger::Bot::Transmitter.new(event["sender"]["id"])
-            if event["message"] && !defined?(message).nil?
+            if event["message"] && !defined?(message).nil? && event["postback"].nil?
               send(:message, event, sender)
             elsif event["postback"] && !defined?(postback).nil?
               send(:postback, event, sender)
@@ -24,8 +24,8 @@ module Messenger
               send(:delivery, event, sender)
             elsif event["optin"]
               send(:optin, event, sender)
-            end 
-          end 
+            end
+          end
         end
         render body: "ok"
       end
