@@ -16,16 +16,21 @@ module Messenger
           messaging_events = entry["messaging"]
           messaging_events.each_with_index do |event, key|
             sender = Messenger::Bot::Transmitter.new(event["sender"]["id"])
-            if event["message"] && !defined?(message).nil?
+            if event["message"] && !defined?(message).nil? && event["message"]["quick_reply"].nil?
               send(:message, event, sender)
-            elsif event["postback"] && !defined?(postback).nil?
-              send(:postback, event, sender)
+            elsif (event["postback"] && !defined?(postback).nil?) || (event["message"]["quick_reply"].present?)
+              if event["message"].present?
+                event["postback"] = event["message"]["quick_reply"]
+                send(:postback, event, sender)
+              else
+                send(:postback, event, sender)
+              end
             elsif event["delivery"] && !defined?(delivery).nil?
               send(:delivery, event, sender)
             elsif event["optin"]
               send(:optin, event, sender)
-            end 
-          end 
+            end
+          end
         end
         render body: "ok"
       end
