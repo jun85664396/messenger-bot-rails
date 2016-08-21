@@ -18,7 +18,7 @@ module Messenger
             sender = Messenger::Bot::Transmitter.new(event["sender"]["id"])
             if event["message"] && !defined?(message).nil? && event["message"]["quick_reply"].nil?
               send(:message, event, sender)
-            elsif (event["postback"] && !defined?(postback).nil?) || (event["message"]["quick_reply"].present?)
+            elsif (event["postback"] && !defined?(postback).nil?) || (event["message"] && event["message"]["quick_reply"].present?)
               if event["message"].present?
                 event["postback"] = event["message"]["quick_reply"]
                 send(:postback, event, sender)
