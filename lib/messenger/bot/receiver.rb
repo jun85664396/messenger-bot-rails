@@ -2,6 +2,7 @@ module Messenger
   module Bot
     class Receiver
       def self.share(data)
+        data = eval(data)
         p "entry"
         p data["entry"]
         p "FIRST"
