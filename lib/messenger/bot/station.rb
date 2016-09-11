@@ -18,7 +18,7 @@ module Messenger
             if params["on_facebook"].present?
               sender = Messenger::Bot::Transmitter.new(event["sender"]["id"], false)
             else
-              sender = Messenger::Bot::Transmitter.new(event["sender"]["id"])
+              sender = Messenger::Bot::Transmitter.new(event["sender"]["id"], true)
             end
             if event["message"] && !defined?(message).nil? && event["message"]["quick_reply"].nil?
               send(:message, event, sender)

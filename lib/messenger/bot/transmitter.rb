@@ -1,7 +1,7 @@
 module Messenger
   module Bot
     class Transmitter
-      def initialize(sender, on_facebook=true)
+      def initialize(sender, on_facebook)
         @sender_id = sender
         @on_facebook = on_facebook
       end
