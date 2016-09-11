@@ -2,9 +2,13 @@ module Messenger
   module Bot
     class Receiver
       def self.share(data)
+        p "entry"
         p data["entry"]
+        p "FIRST"
         p data["entry"].first
+        p "messaging"
         p data["entry"].first["messaging"]
+        p "EVENTS"
         messaging_events = data["entry"].first["messaging"]
         messaging_events.each_with_index do |event, key|
           if event["message"] && !defined?(message).nil?
