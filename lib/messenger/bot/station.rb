@@ -11,6 +11,8 @@ module Messenger
       end
 
       def receive
+        p params
+        p JSON.parse(params)
         Messenger::Bot::Receiver.share(params)
         params["entry"].each do |entry|
           messaging_events = entry["messaging"]
