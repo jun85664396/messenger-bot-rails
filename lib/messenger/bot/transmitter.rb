@@ -11,7 +11,7 @@ module Messenger
         if @on_facebook.nil?
           Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}", data, true)
         else
-          Messenger::Bot::Request.post("salty-hollows-86061.herokuapp.com/receive_message", data, false)
+          Messenger::Bot::Request.post("http://salty-hollows-86061.herokuapp.com/receive_message", data, false)
         end
       end
 
