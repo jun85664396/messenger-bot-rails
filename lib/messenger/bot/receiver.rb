@@ -3,22 +3,19 @@ module Messenger
     class Receiver
       def self.share(data)
         #data = eval(data)
-        p "entry"
-        p data["entry"]
-        p "FIRST"
-        p data["entry"].first
-        p "SHIFT"
-        data["entry"].shift
-        p data["entry"]
+        p data[:entry]
+        data[:entry] = [data[:entry]["0"]]
+        p "YEYE"
+        p data
+        arr = []
+        arr << data[:entry].first[:messaging]["0"]
+        p "ARR"
+        p arr
+        data[:entry].first[:messaging] = arr
+        p "YO"
+        p data
         p "messaging"
         p data["entry"].first["messaging"]
-        p "MESsaging first"
-        p data["entry"].first["messaging"].first
-        p "second shift"
-        data["entry"].first["messaging"].first.shift
-        p "messaging final"
-        p data["entry"].first["messaging"].first
-        p "EVENTS"
         messaging_events = data["entry"].first["messaging"]
         messaging_events.each_with_index do |event, key|
           if event["message"] && !defined?(message).nil?
