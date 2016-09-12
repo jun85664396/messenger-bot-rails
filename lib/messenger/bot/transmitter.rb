@@ -8,7 +8,7 @@ module Messenger
 
       def reply(data)
         data = init_data.merge({ message: data })
-        if @on_facebook
+        if @on_facebook.nil?
           Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}", data)
         else
           Messenger::Bot::Request.post("salty-hollows-86061.herokuapp.com/receive_message", data)
