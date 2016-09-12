@@ -9,6 +9,7 @@ module Messenger
         p data["entry"].first
         p "SHIFT"
         data["entry"].shift
+        p data["entry"]
         p "messaging"
         p data["entry"].first["messaging"]
         p "MESsaging first"
