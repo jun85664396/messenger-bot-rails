@@ -1,19 +1,23 @@
 module Messenger
   module Bot
     class Request
-      def self.post(url, data)
+      def self.post(url, data, on_facebook)
         url = URI.parse(url)
         http = Net::HTTP.new(url.host, 443)
         http.use_ssl = true
         begin
-          request = Net::HTTP::Post.new(url.request_uri)
+          if on_facebook
+            request = Net::HTTP::Post.new(url.request_uri)
+          else
+            request = Net::HTTP::Post.new(url)
+          end
           request["Content-Type"] = "application/json"
           request.body = data.to_json
           response = http.request(request)
           body = JSON(response.body)
           return { ret: body["error"].nil?, body: body }
         rescue => e
-          raise e 
+          raise e
         end
       end
 
@@ -28,7 +32,7 @@ module Messenger
           body = JSON(response.body)
           return { ret: body["error"].nil?, body: body }
         rescue => e
-          raise e 
+          raise e
         end
       end
 
