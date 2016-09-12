@@ -10,9 +10,11 @@ module Messenger
         p "REPLY"
         data = init_data.merge({ message: data })
         if (@on_facebook.nil?) || (@on_facebook == true)
+          p "ON FACEBOOK"
           Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}", data, true)
         else
-          Messenger::Bot::Request.post("http://salty-hollows-86061.herokuapp.com/receive_message", data, false)
+           p "NOT ON FACEBOOK"
+          Messenger::Bot::Request.post("http://perceptron-app.herokuapp.com/receive_message", data, false)
         end
       end
 

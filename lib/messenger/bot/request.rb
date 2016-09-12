@@ -10,7 +10,7 @@ module Messenger
             request = Net::HTTP::Post.new(url.request_uri)
           else
             p "PROBLEM HERE"
-            request = Net::HTTP::Post.new("http://salty-hollows-86061.herokuapp.com/receive_message")
+            request = Net::HTTP::Post.new("http://perceptron-app.herokuapp.com/receive_message")
           end
           request["Content-Type"] = "application/json"
           request.body = data.to_json
