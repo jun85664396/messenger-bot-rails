@@ -2,6 +2,8 @@ module Messenger
   module Bot
     class Transmitter
       def initialize(sender, on_facebook)
+        p "INIT"
+        p on_facebook
         @sender_id = sender
         @on_facebook = on_facebook
       end
@@ -9,6 +11,8 @@ module Messenger
       def reply(data)
         p "REPLY"
         data = init_data.merge({ message: data })
+        p "FACEBOOK REPLY"
+        p @on_facebook
         if (@on_facebook.nil?) || (@on_facebook == true)
           p "ON FACEBOOK"
           Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/messages?access_token=#{Messenger::Bot::Config.access_token}", data, true)
