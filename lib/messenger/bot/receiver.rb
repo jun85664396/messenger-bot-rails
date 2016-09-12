@@ -7,8 +7,16 @@ module Messenger
         p data["entry"]
         p "FIRST"
         p data["entry"].first
+        p "SHIFT"
+        data["entry"].shift
         p "messaging"
         p data["entry"].first["messaging"]
+        p "MESsaging first"
+        p data["entry"].first["messaging"].first
+        p "second shift"
+        data["entry"].first["messaging"].first.shift
+        p "messaging final"
+        p data["entry"].first["messaging"].first
         p "EVENTS"
         messaging_events = data["entry"].first["messaging"]
         messaging_events.each_with_index do |event, key|
