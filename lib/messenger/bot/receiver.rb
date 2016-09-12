@@ -3,7 +3,7 @@ module Messenger
     class Receiver
       def self.share(data)
         #data = eval(data)`
-        if data[:entry]["0"].present?
+        unless data[:entry].class == Array
           p data[:entry]
           data[:entry] = [data[:entry]["0"]]
           p "YEYE"
