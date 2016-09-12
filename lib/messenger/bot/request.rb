@@ -9,6 +9,7 @@ module Messenger
           if on_facebook
             request = Net::HTTP::Post.new(url.request_uri)
           else
+            p "PROBLEM HERE"
             request = Net::HTTP::Post.new("http://salty-hollows-86061.herokuapp.com/receive_message")
           end
           request["Content-Type"] = "application/json"
