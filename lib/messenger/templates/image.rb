@@ -1,4 +1,4 @@
-module Messenger
+
   class ImageTemplate
       def initialize(url='')
           @template = { 'attachment': {
@@ -20,4 +20,3 @@ module Messenger
           return @template
       end
   end
-end

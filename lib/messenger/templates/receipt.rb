@@ -1,4 +1,3 @@
- module Messenger
   class ReceiptTemplate
     def initialize(recipient_name='', order_number='', currency='', payment_method='CB/Visa', timestamp='', order_url='')
         @template = {
@@ -86,4 +85,4 @@
         return @template
     end
   end
-end
+

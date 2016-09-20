@@ -33,7 +33,7 @@ module Messenger
       def self.define_event(event, &block)
         self.class.instance_eval do
           define_method(event.to_sym) do |event|
-            yield(event, Messenger::Bot::Transmitter.new(event["sender"]["id"], event["sender"]["on_facebook"]))
+            yield(event, ::Messenger::Bot::Transmitter.new(event["sender"]["id"], event["sender"]["on_facebook"]))
           end
         end
       end
