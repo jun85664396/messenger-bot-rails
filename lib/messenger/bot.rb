@@ -3,6 +3,13 @@ require "messenger/bot/config"
 require "messenger/bot/request"
 require "messenger/bot/transmitter"
 require "messenger/bot/receiver"
+require "messenger/templates/button"
+require "messenger/templates/generic"
+require "messenger/templates/image"
+require "messenger/templates/quick_reply"
+require "messenger/templates/text"
+
+
 
 module Messenger
   module Bot
