@@ -1,4 +1,4 @@
-module Messenger
+
     class ButtonTemplate
         def initialize(text='')
             @template = {
@@ -64,5 +64,5 @@ module Messenger
           return @template
         end
     end
-  end
+
 

@@ -1,4 +1,4 @@
-module Messenger
+
   class GenericTemplate
     def initialize
         @template = {
@@ -30,4 +30,3 @@ module Messenger
         return @template
     end
   end
-end
