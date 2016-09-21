@@ -15,8 +15,6 @@ module Messenger
         params["entry"].each do |entry|
           messaging_events = entry["messaging"]
           messaging_events.each_with_index do |event, key|
-            p "FACEBOOK"
-            p event["sender"]["on_facebook"]
             if event["sender"]["on_facebook"] == false
               sender = Messenger::Bot::Transmitter.new(event["sender"]["id"], false)
             else

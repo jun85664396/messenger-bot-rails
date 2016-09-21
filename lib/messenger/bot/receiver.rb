@@ -3,6 +3,8 @@ module Messenger
     class Receiver
       def self.share(data)
         #data = eval(data)`
+        p "DATA"
+        p data
         unless data[:entry].class == Array
           p data[:entry]
           data[:entry] = [data[:entry]["0"]]
@@ -18,6 +20,8 @@ module Messenger
           p "messaging"
           p data["entry"].first["messaging"]
         end
+        p "ENTRY"
+        p data["entry"]
         messaging_events = data["entry"].first["messaging"]
         messaging_events.each_with_index do |event, key|
           if event["message"] && !defined?(message).nil?
