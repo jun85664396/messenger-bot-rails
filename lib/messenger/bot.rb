@@ -8,7 +8,7 @@ require "messenger/templates/generic"
 require "messenger/templates/image"
 require "messenger/templates/quick_reply"
 require "messenger/templates/text"
-
+require "messenger/templates/receipt"
 
 
 module Messenger
