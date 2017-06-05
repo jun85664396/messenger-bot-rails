@@ -6,11 +6,12 @@ class QuickReplyTemplate
        }
     end
 
-    def add_postback(title='', payload='')
+    def add_postback(title = '', payload = '', image_url='', content_type = 'text')
         postback_button = {}
-        postback_button['content_type'] = 'text'
+        postback_button['content_type'] = content_type
         postback_button['title'] = title
         postback_button['payload'] = payload
+        postback_button['image_url'] = image_url
         p @template
         @template[:quick_replies] << (postback_button)
     end
