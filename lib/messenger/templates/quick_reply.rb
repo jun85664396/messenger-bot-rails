@@ -32,4 +32,3 @@ class QuickReplyTemplate
     return @template
   end
 end
-q
