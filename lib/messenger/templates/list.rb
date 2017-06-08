@@ -25,4 +25,8 @@ class ListTemplate
       @elements << element
   end
 
+  def get_message
+    return @template
+  end
+
 end
