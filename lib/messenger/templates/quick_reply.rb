@@ -28,8 +28,7 @@ class QuickReplyTemplate
   end
 
   def get_message
-    @template["text"] = @text
+    #@template['text'] = @text
     return @template
   end
 end
-q
