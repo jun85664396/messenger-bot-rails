@@ -26,6 +26,7 @@ class ListTemplate
   end
 
   def get_message
+    @template[:attachment][:payload][:elements] = @elements
     return @template
   end
 
