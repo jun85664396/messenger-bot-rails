@@ -9,7 +9,7 @@ require "messenger/templates/image"
 require "messenger/templates/quick_reply"
 require "messenger/templates/text"
 require "messenger/templates/receipt"
-
+require "messenger/templates/list"
 
 module Messenger
   module Bot
