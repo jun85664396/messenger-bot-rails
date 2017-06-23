@@ -2,7 +2,7 @@ module Messenger
   module Bot
     class Thread
       def set(data)
-        Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/thread_settings?access_token=#{Messenger::Bot::Config.access_token}", data)
+        Messenger::Bot::Request.post("https://graph.facebook.com/v2.6/me/thread_settings?access_token=#{Messenger::Bot::Config.access_token}", data, true)
       end
 
       def unset(data)
