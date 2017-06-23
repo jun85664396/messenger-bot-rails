@@ -1,8 +1,10 @@
 class ListTemplate
-  def initialize()
+  def initialize(sharable = false, top_element_style = 'large')
      @template = {
                     'attachment': {
                         'type': 'template',
+                        'sharable': sharable,
+                        'top_element_style': top_element_style,
                         'payload': {
                             'template_type': 'list',
                             'elements': [],
