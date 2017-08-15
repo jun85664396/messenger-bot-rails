@@ -1,4 +1,4 @@
-#messenger-bot
+# messenger-bot
 [![Build Status](https://travis-ci.org/jun85664396/messenger-bot-rails.svg?branch=master)](https://travis-ci.org/jun85664396/messenger-bot-rails)
 [![Gem Version](https://badge.fury.io/rb/messenger-bot.svg)](https://badge.fury.io/rb/messenger-bot)
 
@@ -6,7 +6,7 @@ Ruby on Rails client!! for [Facebook Messenger Platform](https://developers.face
 
 Requires Rails >= 4
 
-##Installation
+## Installation
 
 Bundler in your Gemfile.
 
@@ -14,9 +14,9 @@ Bundler in your Gemfile.
 gem 'messenger-bot'
 ```
 
-##Getting Started
+## Getting Started
 
-####Before You Begin
+#### Before You Begin
   Now sign in into the [Facebook developer](https://developers.facebook.com/apps) and create an application
 
 1. Add `messenger-bot-rails` to your Gemfile
@@ -61,21 +61,21 @@ gem 'messenger-bot'
 
 [wiki](https://github.com/jun85664396/messenger-bot-rails/wiki/Getting-Started)
 
-##Usage
+## Usage
 
-###message(event, sender)
+### message(event, sender)
 * `event` - Hash containing the message event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#received_message)
 * `sender` - Class to call the 'reply, get_profile' method.
 
-###delivery(event, sender)
+### delivery(event, sender)
 * `event` - Hash containing the delivery event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#message_delivery)
 * `sender` - Class to call the 'reply, get_profile' method.
 
-###postback(event, sender)
+### postback(event, sender)
 * `event` - Hash containing the postback event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#postback)
 * `sender` - Class to call the 'reply, get_profile' method.
 
-###optin(event, sender)
+### optin(event, sender)
 * `event` - Hash containing the optin event from Facebook [format](https://developers.facebook.com/docs/messenger-platform/webhook-reference#postback)
 * `sender` - Class to call the 'reply, get_profile' method.
 
